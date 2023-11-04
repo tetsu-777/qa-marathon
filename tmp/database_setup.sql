@@ -13,7 +13,7 @@ CREATE TABLE Customers (
 CREATE TABLE Cases (
     CaseID SERIAL PRIMARY KEY,
     CaseName VARCHAR(255) NOT NULL,
-    CaseStatus VARCHAR(255) NOT NULL CHECK (CaseStatus IN ('初期段階', '交渉中', '契約締結', '保留中')),
+    CaseStatus VARCHAR(255) NOT NULL CHECK (CaseStatus IN ('新規', '交渉中', '契約締結', '失注')),
     ExpectedRevenue DECIMAL(10, 2) CHECK (ExpectedRevenue >= 0),
     Representative VARCHAR(255) NOT NULL,
     CustomerID INT NOT NULL,
