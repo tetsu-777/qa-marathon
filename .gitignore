@@ -1,3 +1,20 @@
+# misc
+.DS_Store
+.Trashes
+*.pem
+*.lnk
+.history
+
+# env
+*.env
+
+# dir
+work
+db
+pgadmin
+src/*/node_modules
+src/*/.env
+
 # Logs
 logs
 *.log
