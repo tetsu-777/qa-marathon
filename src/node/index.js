@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
-const port = 3000;
+const port = 自分の社員番号;
 
 const cors = require("cors");
 app.use(cors());
