@@ -9,6 +9,9 @@
   </head>
   <body>
     <div class="container mt-5">
+      <div>
+        <a href="../index.html">←TOPへ戻る</a>
+      </div>
       <h1 class="mb-4">Customer List</h1>
       <table class="table table-striped">
         <thead class="thead-dark">
@@ -26,7 +29,7 @@
 
     <script type="module">
       // ExpressサーバのAPIエンドポイントのURL
-      import config from "./config.js";
+      import config from "../config.js";
 
       fetch(`${config.apiUrl}/customers`)
         .then((response) => {
@@ -42,7 +45,12 @@
             const cell2 = row.insertCell(1);
             const cell3 = row.insertCell(2);
             cell1.textContent = index + 1;
-            cell2.textContent = customer.companyname;
+            const mm = document.createElement("a");
+            mm.href = `detail.html?id=${customer.customer_id}`;
+            mm.innerText = customer.company_name;
+            cell2.appendChild(mm);
+
+            // cell2.textContent = customer.company_name;
             cell3.textContent = customer.contact;
           });
         })
