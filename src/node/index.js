@@ -32,7 +32,8 @@ app.get("/customers", async (req, res) => {
 
 app.get("/customer/:customerId", async (req, res) => {
   try{
-    const customerData = await pool.query(`SELECT * FROM customers WHERE customer_id = ${req.params.customerId}`);
+    const customerId = req.params.customerId;
+    const customerData = await pool.query(`SELECT * FROM customers WHERE customer_id = ${customerId}`);
     res.send(customerData.rows);
   }catch(err){
     console.error(err);
