@@ -63,10 +63,10 @@
             cell1.textContent = customer.customer_id;
             cell2.textContent = customer.company_name;
             cell3.textContent = customer.industry;
-            cell4.textContent = customer.contact;
+            cell4.textContent = contactFormat(customer.contact);
             cell5.textContent = customer.location;
-            cell6.textContent = customer.created_date;
-            cell7.textContent = customer.updated_date;
+            cell6.textContent = timestampFormat(customer.created_date);
+            cell7.textContent = timestampFormat(customer.updated_date);
           });
           if(data.length == 0){
             disabledButton();
@@ -102,44 +102,24 @@
         window.location.href = `update.html?id=${customerId}`;
       })
 
-      //編集・削除ボタンの無効化
+      // 編集・削除ボタンの無効化
       const disabledButton = () => {
         const deleteButton = document.getElementById('deleteButton');
         deleteButton.disabled = true;
         const updateButton = document.getElementById('updateButton');
         updateButton.disabled = true;
       }
-    </script>
-    <!-- <script type="module">
-        import config from '../config.js';
-        
-        const deleteCustomer = () => {
-            
-        }
 
-        document.getElementById('customer-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            fetch(config.apiUrl + '/add-customer', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: new URLSearchParams([...formData])
-            }).then(response => response.json())
-            .then(data => {
-                if(data.success) {
-                    alert('顧客情報が正常に保存されました。');
-                    // フォームをリセット
-                    document.getElementById('customer-form').reset();
-                    window.location.href = '../index.html';
-                } else {
-                    alert('保存に失敗しました。');
-                }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    </script> -->
+      // Contactのフォーマット
+      const contactFormat = (num) => num.slice(0, 3) + '-' + num.slice(3, 7) + '-' +num.slice(7);
+
+      // timestampのフォーマット
+      const timestampFormat = (time) => {
+        const originalDate = new Date(time);
+        return originalDate.toLocaleString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      }
+
+    </script>
 
     <!-- BootstrapのJavaScriptと依存関係のリンク -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
