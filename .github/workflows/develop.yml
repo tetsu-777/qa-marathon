@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - id: ssh
         uses: invi5H/ssh-action@v1
