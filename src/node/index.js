@@ -9,10 +9,10 @@ app.use(cors());
 
 const { Pool } = require("pg");
 const pool = new Pool({
-  user: "user_3500",
-  host: "db",
-  database: "crm_3500", 
-  password: "pass_3500",
+  user: "user_tetsuya_tanigami",
+  host: "localhost",
+  database: "db_tetsuya_tanigami", 
+  password: "pass",
   port: 5432,
 });
 
