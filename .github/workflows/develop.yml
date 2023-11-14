@@ -5,7 +5,7 @@ on:
       - develop
 jobs:
   test:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - id: ssh
         uses: invi5H/ssh-action@v1
@@ -14,5 +14,4 @@ jobs:
           SSH_PORT: ${{ secrets.DEV_SSH_PORT }}
           SSH_USER: ${{ secrets.DEV_SSH_USER }}
           SSH_KEY: ${{ secrets.DEV_SSHE_SSH_KEY }}
-      - run: echo "SERVER=${{ steps.ssh.outputs.SERVER }}" >> $GITHUB_ENV
-      - run: ssh $SERVER bash /app/deploy.sh tetsuya_tanigami
+      - run: ssh ${{ steps.ssh.outputs.SERVER }} bash /app/deploy.sh tetsuya_tanigmi
