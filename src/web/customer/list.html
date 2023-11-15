@@ -49,13 +49,10 @@
             mm.href = `detail.html?id=${customer.customer_id}`;
             mm.innerText = customer.company_name;
             cell2.appendChild(mm);
-            cell3.textContent = contactFormat(customer.contact);
+            cell3.textContent = customer.contact;
           });
         })
         .catch((error) => console.error(error));
-      
-      // Contactのフォーマット
-      const contactFormat = (num) => num.slice(0, 3) + '-' + num.slice(3, 7) + '-' +num.slice(7);
     </script>
 
     <!-- BootstrapのJavaScriptと依存関係のリンク -->

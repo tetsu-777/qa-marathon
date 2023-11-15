@@ -63,7 +63,7 @@
             cell1.textContent = customer.customer_id;
             cell2.textContent = customer.company_name;
             cell3.textContent = customer.industry;
-            cell4.textContent = contactFormat(customer.contact);
+            cell4.textContent = customer.contact;
             cell5.textContent = customer.location;
             cell6.textContent = timestampFormat(customer.created_date);
             cell7.textContent = timestampFormat(customer.updated_date);
@@ -109,9 +109,6 @@
         const updateButton = document.getElementById('updateButton');
         updateButton.disabled = true;
       }
-
-      // Contactのフォーマット
-      const contactFormat = (num) => num.slice(0, 3) + '-' + num.slice(3, 7) + '-' +num.slice(7);
 
       // timestampのフォーマット
       const timestampFormat = (time) => {
