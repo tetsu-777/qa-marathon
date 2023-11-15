@@ -73,6 +73,9 @@
             sessionStorage.setItem('inputLocation', inputLocation);
             window.location.href = 'add-confirm.html';
         });
+        if(location.search == "ok"){
+            alert("顧客情報が正常に保存されました。");
+        }
     </script>
     <!-- BootstrapのJavaScriptの読み込み -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>

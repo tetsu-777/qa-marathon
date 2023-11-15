@@ -66,8 +66,8 @@
               .then(data => {
                 if(data.success) {
                     // フォームをリセット
-                    window.location.href = 'add.html';
-                    alert('顧客情報が正常に保存されました。');
+                    window.location.href = 'add.html?ok';
+                    // alert('顧客情報が正常に保存されました。');
                 } else {
                     alert('保存に失敗しました。');
                 }
