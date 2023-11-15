@@ -73,7 +73,9 @@
             sessionStorage.setItem('inputLocation', inputLocation);
             window.location.href = 'add-confirm.html';
         });
-        if(location.search == "ok"){
+        const searchParams = new URLSearchParams(window.location.search);
+        const addStatus = searchParams.get('addStatus');
+        if(addStatus == "ok"){
             alert("顧客情報が正常に保存されました。");
         }
     </script>
