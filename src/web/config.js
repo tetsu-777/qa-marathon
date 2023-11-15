@@ -1,5 +1,5 @@
 const config = {
-  apiUrl: 'http://localhost:3500'
+  apiUrl: '/api_tetsuya_tanigami'
 };
 
 export default config;
