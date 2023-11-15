@@ -15,6 +15,13 @@ const pool = new Pool({
   password: "pass",
   port: 5432,
 });
+// const pool = new Pool({
+//   user: "user_3500",
+//   host: "db",
+//   database: "crm_3500", 
+//   password: "pass_3500",
+//   port: 5432,
+// });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
