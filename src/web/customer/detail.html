@@ -81,7 +81,7 @@
         e.preventDefault();
         const result = confirm('削除していいですか？');
         if(result){
-            fetch(config.apiUrl + `/customer/${customerId}`, {
+            fetch(`/${config.apiUrl}/customer/${customerId}`, {
                 method: 'DELETE',
             }).then((response) => response.json())
             .then(data => {
